@@ -516,6 +516,10 @@ footer {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.work-examples-item:hover .work-example-overlay {
+  transform: translateY(0);
+}
+
 .work-examples {
   font-size: 18px;
   line-height: 2;
@@ -536,7 +540,30 @@ footer {
   color: var(--main-text-color);
 }
 
-.work-examples-link:hover,
-.work-examples-link:focus {
-  background-color: var(--btn-active);
+.work-examples-thumb {
+  position: relative;
+  overflow: hidden;
 }
+
+.work-example-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  transform: translateY(100%);
+  transition: transform var(--animation);
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.work-overlay-text {
+  
+  font-size: 18px;
+  color: var(--white-text-color);
+  letter-spacing: 0.03em;
+  line-height: 1.56;
+  backdrop-filter: blur(1px);
+
+}
+
