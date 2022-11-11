@@ -15,6 +15,9 @@
   --icon-fill: #afb1b8;
 
   --indent-card: 30px;
+
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --test: 5000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -107,6 +110,7 @@ header {
   color: var(--dark-text-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color var(--animation);
 }
 
 .header-contact {
@@ -116,6 +120,7 @@ header {
   color: var(--main-text-color);
 }
 
+
 .current,
 .header-link:hover,
 .header-link:focus,
@@ -124,6 +129,21 @@ header {
 .contact-link:hover,
 .contact-link:focus {
   color: var(--accent-color);
+}
+
+.header-item {
+  position: relative;
+}
+
+.current::after {
+content: '';
+display: block;
+width: 100%;
+height: 4px;
+border-radius: 2px;
+background-color: var(--accent-color);
+position: absolute;
+bottom: -1px;
 }
 
 .header-icon {
@@ -175,6 +195,8 @@ header {
   box-shadow: var(--btn-shadow);
   border-radius: 4px;
   text-align: center;
+  
+  transition: background-color var(--animation);
 }
 
 .order-btn:hover,
@@ -312,10 +334,13 @@ header {
   height: 44px;
   border-radius: 50%;
   background-color: #ffffff;
+  
+  transition: background-color var(--animation);
 }
 
 .socials-icon {
   fill: var(--icon-fill);
+  transition: fill var(--animation);
 }
 
 .employee-socials:hover .socials-icon,
@@ -342,10 +367,12 @@ header {
   height: 92px;
   border: 1px solid var(--icon-fill);
   border-radius: 4px;
+  transition: border var(--animation);
 }
 
 .client-icon {
   fill: var(--icon-fill);
+  transition: fill var(--animation);
 }
 
 .client-link:hover .client-icon,
@@ -382,6 +409,7 @@ footer {
   font-style: normal;
   line-height: 1.71;
   color: var(--footer-contact-color);
+  transition: color var(--animation);
 }
 
 .logo-footer {
@@ -419,6 +447,7 @@ footer {
   border-radius: 50%;
 
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--animation);
 }
 
 .owner-socials:hover,
@@ -445,6 +474,12 @@ footer {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--dark-text-color);
+
+  transition: background-color var(--animation), color var(--animation);
+}
+
+.portfolio-btn-item {
+  transition: box-shadow var(--animation);
 }
 
 .portfolio-btn-item:not(:last-child) {
@@ -472,6 +507,8 @@ footer {
   flex-basis: calc(100% / 3 - var(--indent-card));
   margin-top: var(--indent-card);
   margin-left: var(--indent-card);
+
+  transition: box-shadow var(--animation);
 }
 
 .work-examples-item:hover {
